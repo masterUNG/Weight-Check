@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class MyOpenHelper extends SQLiteOpenHelper{
 
+
     //Explicit
     public static final String database_name = "Weight.db"; //ประกาศค่าคงที่ ทีี่ไม่สามารถแก้ไขได้
     private static final int database_version = 1;
@@ -16,6 +17,13 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "_id integer primary key, " +
             "Date text, " +
             "Weight text);";
+
+    private static final String create_table_user = "create table userTABLE (" +
+            "_id integer primary key, " +
+            "User text, " +
+            "Password text, " +
+            "Name text);";
+
 
 
     public MyOpenHelper(Context context) {
@@ -25,6 +33,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(create_table_weight);
+        sqLiteDatabase.execSQL(create_table_user);
     }
 
     @Override
