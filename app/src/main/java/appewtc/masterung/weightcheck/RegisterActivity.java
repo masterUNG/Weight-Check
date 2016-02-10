@@ -47,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         } else {
 
+
             //No Space
             MyManage objMyManage = new MyManage(this);
             objMyManage.addUserTable(userString, passwordString, nameString);
